@@ -2,6 +2,16 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Versioning
+
+You don't need to edit `app.config.js` for versioning.
+
+Use `npm version major` and `npm version minor` to bump major/minor version. Patch version, everytime you run `npm run prebuild` or `npm run prebuild:release`, will be automatically set to `${year}${month}${day}${hour}${minute}` with proper zero paddings.
+
+---
+
+# To cleanup
+
 ## Get started
 
 1. Install dependencies
