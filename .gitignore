@@ -36,3 +36,6 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# TODO: Remove this when you build a real app
+package-lock.json

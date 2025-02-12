@@ -2,6 +2,11 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Get started
+
+1. Clone or download this repository
+2. Remove `package-lock.json` line in `.gitignore`.
+
 ## Versioning
 
 You don't need to edit `app.config.js` for versioning.
