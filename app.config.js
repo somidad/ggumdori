@@ -50,6 +50,7 @@ export default {
           backgroundColor: "#ffffff",
         },
       ],
+      "expo-asset",
     ],
     experiments: {
       typedRoutes: true,

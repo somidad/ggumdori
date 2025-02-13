@@ -13,6 +13,31 @@ You don't need to edit `app.config.js` for versioning.
 
 Use `npm version major` and `npm version minor` to bump major/minor version. Patch version, everytime you run `npm run prebuild` or `npm run prebuild:release`, will be automatically set to `${year}${month}${day}${hour}${minute}` with proper zero paddings.
 
+## Assets
+
+If you want to use assets of file types other than [those supported by default](https://docs.expo.dev/versions/latest/sdk/asset/#configurable-properties):
+
+1. Add file extensions to `metro.config.js` you want to bundle
+2. Use the following code snippet:
+
+- [ ] TODO: Define it as a reusable function
+
+```js
+async () => {
+  try {
+    const nodeRequire = require("@/assets/<filename>");
+    const asset = Asset.fromModule(nodeRequire);
+    await asset.downloadAsync();
+    if (asset.localUri) {
+      const fileContents = await readAsStringAsync(asset.localUri);
+      // Do something with `fileContents`, e.g. set a state
+    }
+  } catch (error) {
+    console.error(error);
+  }
+};
+```
+
 ---
 
 # To cleanup
