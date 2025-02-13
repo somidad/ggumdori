@@ -37,5 +37,7 @@ yarn-error.*
 
 app-example
 
+license.tsv
+
 # TODO: Remove this when you build a real app
 package-lock.json
