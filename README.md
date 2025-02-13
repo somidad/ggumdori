@@ -5,13 +5,17 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 ## Get started
 
 1. Clone or download this repository
-2. Remove `package-lock.json` line in `.gitignore`.
+2. Remove lines below `# TODO: ...` in `.gitignore`.
+
+## Supabase types
+
+If you use Supabse, set `EXPO_PUBLIC_SUPABASE_PROJECT_ID` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` properly and run the command `npm run supabase-types`. Then you can get `utils/supabase-types.ts`.
 
 ## Versioning
 
 You don't need to edit `app.config.js` for versioning.
 
-Use `npm version major` and `npm version minor` to bump major/minor version. Patch version, everytime you run `npm run prebuild` or `npm run prebuild:release`, will be automatically set to `${year}${month}${day}${hour}${minute}` with proper zero paddings.
+Use `npm version major | minor` to bump major/minor version. Patch version will be automatically set to `${year}${month}${day}${hour}${minute}` with proper zero paddings everytime you run `npm run prebuild` or `npm run prebuild:release`.
 
 ## Assets
 

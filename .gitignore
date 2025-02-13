@@ -41,3 +41,4 @@ license.tsv
 
 # TODO: Remove this when you build a real app
 package-lock.json
+utils/supabase-types.ts
