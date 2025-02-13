@@ -5,7 +5,8 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 ## Get started
 
 1. Clone or download this repository
-2. Remove lines below `# TODO: ...` in `.gitignore`.
+2. Remove lines below `# TODO: ...` in `.gitignore`
+3. Edit `PACKAGE_NAME` in `app.config.js`
 
 ## Supabase types
 
