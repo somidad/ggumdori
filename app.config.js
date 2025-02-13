@@ -1,7 +1,12 @@
 import { readFileSync } from "fs";
 import { env } from "process";
 
+const PACKAGE_NAME = 'com.jojosw.ggumdori';
+
+// WARNING: Do not change below lines unless you know what you are doing.
+
 const IS_DEV = env.APP_VARIANT === "development";
+const packageName = IS_DEV ? `${PACKAGE_NAME}.dev` : PACKAGE_NAME;
 
 const { version } = JSON.parse(readFileSync("./package.json", "utf8"));
 const [major, minor] = version.split(".");
@@ -26,9 +31,11 @@ export default {
     userInterfaceStyle: "automatic",
     newArchEnabled: true,
     ios: {
+      bundleIdentifier: packageName.replaceAll("_", "-"),
       supportsTablet: true,
     },
     android: {
+      package: packageName.replaceAll("-", "_"),
       adaptiveIcon: {
         foregroundImage: "./assets/images/adaptive-icon.png",
         backgroundColor: "#ffffff",

@@ -9,8 +9,10 @@
     "prebuild:release": "APP_VARIANT=release expo prebuild",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "android:release": "APP_VARIANT=release expo run:android --variant release",
+    "ios": "expo run:ios",
+    "ios:release": "APP_VARIANT=release expo run:ios --variant release",
     "web": "expo start --web",
     "test": "jest --watchAll",
     "lint": "expo lint"
@@ -59,7 +61,8 @@
     "jest-expo": "~52.0.3",
     "license-report": "^6.7.1",
     "react-test-renderer": "18.3.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "expo-dev-client": "~5.0.12"
   },
   "private": true
 }

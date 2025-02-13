@@ -46,6 +46,13 @@ async () => {
 
 You can get `license.tsv`, a list of licenses of open source projects by running the command `npm run license`. Use it to make a open source license notice.
 
+## Production biuld
+
+```sh
+npm run android:release
+npm run ios:release
+```
+
 ---
 
 # To cleanup
