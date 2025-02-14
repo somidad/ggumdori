@@ -43,6 +43,10 @@ async () => {
 };
 ```
 
+## SQLite
+
+The underlying library is `expo-sqlite`. The entire app is wrapped with `SQLiteProvder` in `app/_layout.tsx`. DB is `app.db`. Use `useSQLiteContext()` hook to access the DB.
+
 ## Open source license
 
 You can get `license.tsv`, a list of licenses of open source projects by running the command `npm run license`. Use it to make a open source license notice.
