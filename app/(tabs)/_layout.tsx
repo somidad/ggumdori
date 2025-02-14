@@ -3,6 +3,8 @@ import React from "react";
 import { BottomNavigation, Icon } from "react-native-paper";
 import { CommonActions } from "@react-navigation/native";
 
+const ICON_SIZE = 24;
+
 export default function TabLayout() {
   return (
     <Tabs
@@ -57,7 +59,7 @@ export default function TabLayout() {
           title: "Statements",
           tabBarLabel: "Statements",
           tabBarIcon: ({ color }) => (
-            <Icon size={28} source="chart-areaspline" color={color} />
+            <Icon size={ICON_SIZE} source="chart-areaspline" color={color} />
           ),
         }}
       />
@@ -67,7 +69,7 @@ export default function TabLayout() {
           title: "Transactions",
           tabBarLabel: "Transactions",
           tabBarIcon: ({ color }) => (
-            <Icon size={28} source="chart-bar" color={color} />
+            <Icon size={ICON_SIZE} source="chart-bar" color={color} />
           ),
         }}
       />
@@ -77,7 +79,7 @@ export default function TabLayout() {
           title: "Accounts",
           tabBarLabel: "Accounts",
           tabBarIcon: ({ color }) => (
-            <Icon size={28} source="wallet" color={color} />
+            <Icon size={ICON_SIZE} source="wallet" color={color} />
           ),
         }}
       />
@@ -87,7 +89,7 @@ export default function TabLayout() {
           title: "Currencies",
           tabBarLabel: "Currencies",
           tabBarIcon: ({ color }) => (
-            <Icon size={28} source="currency-krw" color={color} />
+            <Icon size={ICON_SIZE} source="currency-krw" color={color} />
           ),
         }}
       />
@@ -97,7 +99,7 @@ export default function TabLayout() {
           title: "Settings",
           tabBarLabel: "Settings",
           tabBarIcon: ({ color }) => (
-            <Icon size={28} source="cog" color={color} />
+            <Icon size={ICON_SIZE} source="cog" color={color} />
           ),
         }}
       />
