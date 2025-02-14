@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { env } from "process";
 
-const PACKAGE_NAME = "com.jojosw.ggumdori";
+const PACKAGE_NAME = 'com.jojosw.ggumdori';
 
 // WARNING: Do not change below lines unless you know what you are doing.
 
@@ -58,7 +58,6 @@ export default {
         },
       ],
       "expo-asset",
-      "expo-sqlite",
     ],
     experiments: {
       typedRoutes: true,
