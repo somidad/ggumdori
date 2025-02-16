@@ -8,6 +8,30 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Remove lines below `# TODO: ...` in `.gitignore`
 3. Edit `PACKAGE_NAME` in `app.config.js`
 
+## UI
+
+`react-native-paper` is underlying library.
+
+### AppBar (header)
+
+Use `components/header.tsx` for consistent UI and theming.
+
+```diff
++import { useRouter} from 'expo-router';
+
+ function Component() {
++  const router = useRouter();
+
+   return (
+     <Stack.Screen
+       options={{
++        header: (props) => Header(props, { title: 'Page title', router })
+       }}
+     />
+   );
+ }
+```
+
 ## Supabase types
 
 If you use Supabse, set `EXPO_PUBLIC_SUPABASE_PROJECT_ID` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` properly and run the command `npm run supabase-types`. Then you can get `utils/supabase-types.ts`.
