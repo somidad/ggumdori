@@ -1,6 +1,8 @@
+import { supabase } from "@/utils/supabase";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { useRouter } from "expo-router";
 import { View } from "react-native";
-import { List, useTheme } from "react-native-paper";
+import { Button, List, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Settings() {
@@ -33,7 +35,16 @@ export default function Settings() {
           justifyContent: "center",
           alignItems: "center",
         }}
-      ></View>
+      >
+        <Button
+          onPress={() => {
+            supabase.auth.signOut();
+            router.dismissTo("/");
+          }}
+        >
+          Signout
+        </Button>
+      </View>
     </SafeAreaView>
   );
 }
