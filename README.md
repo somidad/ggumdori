@@ -7,6 +7,7 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 1. Clone or download this repository
 2. Remove lines below `# TODO: ...` in `.gitignore`
 3. Edit `PACKAGE_NAME` in `app.config.js`
+4. Edit `assets/texts/{terms,privacy,licenses}.txt`
 
 ## UI
 
@@ -48,8 +49,6 @@ If you want to use assets of file types other than [those supported by default](
 
 1. Add file extensions to `metro.config.js` you want to bundle
 2. Use the following code snippet:
-
-- [ ] TODO: Define it as a reusable function
 
 ```js
 async () => {
