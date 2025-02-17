@@ -1,9 +1,10 @@
 import { Header } from "@/components/header";
-import { readTextAsset } from "@/utils/readTextAsset";
 import { Stack, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { Asset } from "expo-asset";
+import { readAsStringAsync } from "expo-file-system";
 
 export default function Licenses() {
   const theme = useTheme();
@@ -12,8 +13,18 @@ export default function Licenses() {
   const [licenses, setLicenses] = useState("");
 
   async function readLicenses() {
-    const licenses = await readTextAsset("texts/licenses.txt");
-    setLicenses(licenses);
+    const name = "texts/licenses.txt";
+    try {
+      const nodeRequire = require(`@/assets/${name}`);
+      const asset = Asset.fromModule(nodeRequire);
+      await asset.downloadAsync();
+      if (asset.localUri) {
+        const fileContent = await readAsStringAsync(asset.localUri);
+        setLicenses(fileContent);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   useEffect(() => {

@@ -3,7 +3,8 @@ import { Stack, useRouter } from "expo-router";
 import { Text, useTheme } from "react-native-paper";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useEffect, useState } from "react";
-import { readTextAsset } from "@/utils/readTextAsset";
+import { Asset } from "expo-asset";
+import { readAsStringAsync } from "expo-file-system";
 
 export default function Terms() {
   const theme = useTheme();
@@ -12,8 +13,18 @@ export default function Terms() {
   const [terms, setTerms] = useState("");
 
   async function readTerms() {
-    const terms = await readTextAsset("texts/terms.txt");
-    setTerms(terms);
+    const name = "texts/terms.txt";
+    try {
+      const nodeRequire = require(`@/assets/${name}`);
+      const asset = Asset.fromModule(nodeRequire);
+      await asset.downloadAsync();
+      if (asset.localUri) {
+        const fileContent = await readAsStringAsync(asset.localUri);
+        setTerms(fileContent);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   useEffect(() => {
