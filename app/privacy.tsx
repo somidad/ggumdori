@@ -36,6 +36,7 @@ export default function Privacy() {
       style={{
         flex: 1,
         backgroundColor: theme.colors.background,
+        padding: 12,
       }}
     >
       <Stack.Screen

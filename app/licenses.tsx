@@ -36,6 +36,7 @@ export default function Licenses() {
       style={{
         flex: 1,
         backgroundColor: theme.colors.background,
+        padding: 12,
       }}
     >
       <Stack.Screen
